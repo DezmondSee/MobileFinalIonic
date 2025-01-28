@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - TravelTrack</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <ion-content>
+        <div class="login-container">
+            <h1>Login to Your Account</h1>
+            <form id="loginForm">
+                <ion-item>
+                    <ion-label position="floating">Email</ion-label>
+                    <ion-input type="email" id="email" name="email" required></ion-input>
+                </ion-item>
+                <span class="error-message" id="emailError"></span>
+
+                <ion-item>
+                    <ion-label position="floating">Password</ion-label>
+                    <ion-input type="password" id="password" name="password" required></ion-input>
+                    <span id="togglePassword" class="eye-icon">&#128065;</span>
+                </ion-item>
+                <span class="error-message" id="passwordError"></span>
+
+                <ion-button expand="full" type="submit">Login</ion-button>
+            </form>
+
+            <p class="signup-link">Don't have an account? <a href="signup.html">Sign up here</a></p>
+            <p class="signup">Forgot Password? <a href="forgot-password.html">Click here</a></p>
+        </div>
+    </ion-content>
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>

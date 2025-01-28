@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+</head>
+
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-buttons slot="start">
+                    <ion-button id="backButton">
+                        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+                <ion-title>TripTact</ion-title>
+                <ion-buttons slot="end">
+                    <ion-button (click)="toggleNav()">
+                        <ion-icon name="menu"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content>
+            <div class="container">
+                <h2>Travel Journal</h2>
+                <form id="journalForm">
+                    <ion-item>
+                        <ion-label position="floating">Place Name</ion-label>
+                        <ion-input type="text" id="attraction_name" readonly></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label position="floating">State</ion-label>
+                        <ion-input type="text" id="state_name" readonly></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label position="floating">Country</ion-label>
+                        <ion-input type="text" id="country_name" readonly></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label position="floating">Date of Travel</ion-label>
+                        <ion-datetime id="travel_date"></ion-datetime>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>How do you feel?</ion-label>
+                        <ion-select id="feeling">
+                            <ion-select-option value="happy">Happy</ion-select-option>
+                            <ion-select-option value="satisfied">Satisfied</ion-select-option>
+                            <ion-select-option value="sad">Sad</ion-select-option>
+                            <ion-select-option value="excited">Excited</ion-select-option>
+                            <ion-select-option value="relaxed">Relaxed</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label position="floating">Impression</ion-label>
+                        <ion-textarea id="impression"></ion-textarea>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label position="floating">Food Spending</ion-label>
+                        <ion-input type="number" id="food_spending" value="0" min="0" step="any" (ionInput)="updateSpendingTotal()"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label position="floating">Transport Spending</ion-label>
+                        <ion-input type="number" id="transport_spending" value="0" min="0" step="any" (ionInput)="updateSpendingTotal()"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label position="floating">Other Spending</ion-label>
+                        <ion-input type="number" id="other_spending" value="0" min="0" step="any" (ionInput)="updateSpendingTotal()"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label position="floating">Total Spending Amount</ion-label>
+                        <ion-input id="spending_amount" type="number" placeholder="Amount spent" min="0" step="any"></ion-input>
+                        <ion-button fill="outline" id="convertBtn" (click)="convertCurrency()">Convert</ion-button>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>Converted Amount</ion-label>
+                        <ion-input id="converted_amount" type="text" readonly placeholder="Converted amount"></ion-input>
+                    </ion-item>
+
+                    <!-- Camera section -->
+                    <ion-item>
+                        <ion-label>Capture and Save Image</ion-label>
+                    </ion-item>
+                    <ion-button id="startCamera" expand="block">Start Camera</ion-button>
+                    <video id="cameraFeed" width="100%" height="auto" autoplay></video>
+                    <ion-button id="captureButton" expand="block">Capture Image</ion-button>
+
+                    <div id="imageSaveContainer" style="display: none;">
+                        <ion-label>Save Captured Image</ion-label>
+                        <img id="capturedImage" src="" alt="Captured Image" width="100%" />
+                        <ion-input id="imageName" placeholder="Enter image name"></ion-input>
+                    </div>
+
+                    <ion-item id="cameraError" color="danger" style="display: none;">
+                        Unable to access your camera. Please check permissions.
+                    </ion-item>
+
+                    <ion-button id="updateButton" expand="block">UPDATE</ion-button>
+                </form>
+            </div>
+        </ion-content>
+    </ion-app>
+
+    <script src="js/editJournal.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - TravelTrack</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <!-- Ionic Framework -->
+    <script src="https://cdn.jsdelivr.net/npm/@ionic/core@5.6.0/dist/ionic/ionic.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@ionic/core@5.6.0/dist/ionic/ionic.bundle.css" rel="stylesheet">
+</head>
+
+<body>
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Create an Account</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <div class="signup-container">
+            <form id="signupForm">
+                <ion-item>
+                    <ion-label position="floating" for="email">Email</ion-label>
+                    <ion-input type="email" id="email" name="email" required></ion-input>
+                </ion-item>
+                <span class="error-message" id="emailError"></span>
+
+                <ion-item>
+                    <ion-label position="floating" for="username">Username</ion-label>
+                    <ion-input type="text" id="username" name="username" required></ion-input>
+                </ion-item>
+                <span class="error-message" id="usernameError"></span>
+
+                <ion-item>
+                    <ion-label position="floating" for="birthday">Birthday</ion-label>
+                    <ion-datetime id="birthday" name="birthday" required></ion-datetime>
+                </ion-item>
+                <span class="error-message" id="birthdayError"></span>
+
+                <ion-item>
+                    <ion-label position="floating" for="password">Password</ion-label>
+                    <ion-input type="password" id="password" name="password" required></ion-input>
+                    <ion-icon name="eye" slot="end" id="togglePassword" class="eye-icon"></ion-icon>
+                </ion-item>
+                <span class="error-message" id="passwordError"></span>
+
+                <ion-item>
+                    <ion-label position="floating" for="gender">Gender</ion-label>
+                    <ion-select id="gender" name="gender" required>
+                        <ion-select-option value="">Select Gender</ion-select-option>
+                        <ion-select-option value="Male">Male</ion-select-option>
+                        <ion-select-option value="Female">Female</ion-select-option>
+                        <ion-select-option value="Other">Other</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <span class="error-message" id="genderError"></span>
+
+                <ion-button expand="full" type="submit">Create Account</ion-button>
+            </form>
+
+            <p class="login-link">Have an account? <a href="login.html">Login here</a></p>
+        </div>
+    </ion-content>
+
+    <script src="js/signup.js"></script>
+</body>
+
+</html>

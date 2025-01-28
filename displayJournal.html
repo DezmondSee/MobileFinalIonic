@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Travel Journals</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/displayJournal.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <ion-header class="bg-white text-dark shadow-sm py-3">
+        <ion-toolbar>
+            <ion-buttons slot="start">
+                <ion-button id="backButton" style="width: 30px; height: 30px; cursor: pointer; margin-right: 5px;">
+                    <img src="img/back.png" alt="Back" style="width: 30px; height: 30px;" />
+                </ion-button>
+            </ion-buttons>
+            <ion-title class="font-weight-bold text-uppercase m-0" style="font-family: 'Arial', sans-serif; font-size: 36px; 
+                    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);">
+                <img src="img/logo.webp" alt="Logo" class="rounded-circle border shadow-sm mr-3" style="width: 60px; height: 60px; object-fit: cover;">
+                TripTact
+            </ion-title>
+            <ion-buttons slot="end">
+                <ion-button class="navbar-toggler" onclick="toggleNav()">
+                    <img src="img/control.gif" alt="Toggle" class="navbar-toggler-icon" />
+                </ion-button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-menu side="end" content-id="main-content">
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>Menu</ion-title>
+                <ion-buttons slot="end">
+                    <ion-button onclick="closeNav()">
+                        <ion-icon name="close"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <div class="welcome-container">
+                <p>Welcome</p>
+                <img src="img/smile.png" alt="Smile" />
+            </div>
+
+            <ion-list>
+                <ion-item href="travel.html">
+                    <ion-icon slot="start" src="img/hotel.gif" alt="Travel"></ion-icon>
+                    <ion-label>Travel</ion-label>
+                </ion-item>
+                <ion-item href="displayJournal.html">
+                    <ion-icon slot="start" src="img/journal.gif" alt="Journal"></ion-icon>
+                    <ion-label>Journal</ion-label>
+                </ion-item>
+                <ion-item href="myTrip.html">
+                    <ion-icon slot="start" src="img/cart.gif" alt="MyTrip"></ion-icon>
+                    <ion-label>MyTrip</ion-label>
+                </ion-item>
+                <ion-item href="profile.html">
+                    <ion-icon slot="start" src="img/user.gif" alt="Profile"></ion-icon>
+                    <ion-label>Profile</ion-label>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+
+    <ion-content id="main-content">
+        <div class="container mt-5">
+            <h2 class="page-title d-flex align-items-center">
+                Travel Journals
+                <img src="img/luggage.png" alt="Title Icon" class="page-title-icon me-2" />
+            </h2>
+            <p class="quote">"Travel opens your heart, broadens your mind, and fills your life with stories to tell."</p>
+            <div id="responseContainer"></div>
+            <div id="journalData"></div>
+        </div>
+    </ion-content>
+
+    <script src="js/displayJournal.js"></script>
+</body>
+
+</html>
